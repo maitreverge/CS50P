@@ -14,12 +14,9 @@ def main():
         except EOFError:
             break
 
-
-    for items, numbers in grocery.items()
-        print(f"{numbers} {items.capitalize()}")
-
-
-
+    sorted_dict = dict(sorted(grocery.items(), key=lambda items: items[0]))
+    for items, numbers in sorted_dict.items():
+        print(f"{numbers} {items.upper()}")
 
 
 if __name__ == "__main__":
