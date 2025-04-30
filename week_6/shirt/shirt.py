@@ -1,6 +1,8 @@
 import sys
 import csv
 import os
+import PIL
+from PIL import Image, ImageOps
 
 
 def print_usage(message):
@@ -25,13 +27,8 @@ def parse_args(args):
     correct_extension = (ext_output in valid_extension and ext_input in valid_extension)
     similar_extensions = ext_input == ext_output
 
-
     if not correct_extension or not similar_extensions:
-        print_usage("Incorrect file extension")
-
-    # print(ext_input)
-
-
+        print_usage("Arguments must be of the same similar extension")
 
     # Checks if the file both exists and is readeable
     if not os.access(input_file, os.R_OK):
@@ -39,9 +36,23 @@ def parse_args(args):
 
     return input_file, output_file
 
+def get_shirt_size(shirt):
+    size = ()
+
+
+    return size
 
 def main():
-    parse_args(sys.argv)
+    input_file, output_file = parse_args(sys.argv)
+
+    with Image.open("shirt.png") as shirt:
+        shirt_size = shirt.size
+        
+        with Image.open(input_file) as img:
+            # Resize and cropped image
+            ImageOps.fit(img, shirt_size)
+            img.paste(shirt)
+            img.save(output_file)
 
 
 
