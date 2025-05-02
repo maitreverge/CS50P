@@ -7,9 +7,11 @@ def main():
 
 
 def count(s):
-    pattern = r'([\s \.\?!,:]*|[^\w])[U|u]m([\s \.\?!,:]*|[^\w])'
+    # ! Notes : \b is the boundary of \w, making the punct check useless
+    # pattern = r'[\s\.\?!,:]*\b[U|u]m\b[\s\.\?!,:]*'
+    pattern = r"\b[U|u]m\b"
     matches = re.findall(pattern, s)
-    print(matches)
+    # print(matches)
     return len(matches)
 
 
