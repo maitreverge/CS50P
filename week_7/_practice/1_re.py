@@ -89,10 +89,20 @@ else:
     print("Invalid")
 
 
+"""
+A|B         Either A or B
+(...)       A group
+(?:...)       Non-capturing version
+"""
 
+"""
+re.search      => Searches in the whole string
+re.match       => Similar to re.search("^pattern", string)
+re.fullmatch   => Similar to re.search("^pattern$", string)
+"""
 
-
-if re.search(r"^.+@.+\.edu$", email):
+# ! NOTE : The whole group (\w\.)? is optionnal
+if re.search(r"^\w+@(\w\.)?\w+\.edu$", email, re.IGNORECASE):
     print("Valid")
 else:
     print("Invalid")
