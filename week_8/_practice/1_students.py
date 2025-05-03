@@ -15,6 +15,17 @@ class Student:
     # This print the object
     def __str__(self):
         return f"{self.name} from {self.house}"
+
+    """
+    By declaring a class method, we can now instanciate and return an instance
+    of the class without needing first and instance of the class itslef
+    """
+    @classmethod
+    def get(cls):
+        name = input("Name: ")
+        house = input("House: ")
+        patronus = input("Patronus: ")
+        return cls(name, house, patronus)
     
     # ! By convention, any method must have a self object
     def charm(self):
@@ -54,7 +65,7 @@ class Student:
 
 
 def main():
-    student = get_student()
+    student = Student.get()
     print("Expecto Patronum")
     # student.house = "Hehe"
 
@@ -62,13 +73,6 @@ def main():
     # When the setter student.house = ... is called, this is enough clues
     # to Python to call the getter
 
-    print(student.charm())
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    patronus = input("Patronus: ")
-    return Student(name, house, patronus)
 
 if __name__ == "__main__":
     main()
