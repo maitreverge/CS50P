@@ -3,3 +3,4 @@ tabulate
 pillow
 validators
 inflect
+fpdf
