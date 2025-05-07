@@ -2,3 +2,4 @@ pytest
 tabulate
 pillow
 validators
+inflect
