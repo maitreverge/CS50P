@@ -1,6 +1,6 @@
 class Jar:
     def __init__(self, capacity=12):
-        if capacity < 0:
+        if not isinstance(capacity, int) or capacity < 0:
             raise ValueError("Capacity can't be negative")
         self._capacity = capacity
         self._size = 0
