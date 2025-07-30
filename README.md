@@ -103,9 +103,10 @@ Each week explores a new programming concept, building foundational skills in Py
    ```bash
    source ./p_env.sh master
    ```
-   > [!NOTE]
-   > The `p_env.sh` script manages Python virtual environments and dependencies.
-   > For help, run: `./p_env.sh -h`
+> [!NOTE]
+> The `p_env.sh` script manages Python virtual environments and dependencies.
+> For help, run: `./p_env.sh -h`
+
 4. **Run any script:**
    ```bash
    python week_X/project_name/project.py
